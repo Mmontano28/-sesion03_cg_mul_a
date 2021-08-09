@@ -25,9 +25,9 @@ public class Cilindrica
       return new Cilindrica(p, angulo1,z1);
     }
     
-    public Cilindrica esferica_cilindrica(Cilindrica m)//De coordenadas esfercias a cilindricas
+    public Cilindrica esferica_cilindrica(Esferica m)//De coordenadas esfercias a cilindricas
     {
-        return esferica_cilindrica(m.getP(),m.getAngulo1(),m.getZ1());
+            return esferica_cilindrica(m.getRadio(),m.getAnguloE(),m.getAnguloF());
         
     }
     public Esferica cilindrica_esferica(double p,double angulo1,double z1)//De coordenadas cilindricas a esfericas
@@ -37,9 +37,9 @@ public class Cilindrica
         double anguloF=angulo1;
         return new Esferica(radio,anguloE,anguloF);
     }
-    public Esferica cilindrica_esferica(Esferica z)//De coordenadas cilindricas a esfericas
+    public Esferica cilindrica_esferica(Cilindrica z)//De coordenadas cilindricas a esfericas
     {
-        return cilindrica_esferica(z.getRadio(),z.getAnguloE(),z.getAnguloF());
+        return cilindrica_esferica(z.getP(),z.getAngulo1(),z.getZ1());
         
     }
     
@@ -55,7 +55,7 @@ public class Cilindrica
     }
 
     public double getAngulo1() {
-        return angulo1;
+    return angulo1;
     }
 
     public void setAngulo1(double angulo1) {
